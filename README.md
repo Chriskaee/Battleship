@@ -1,1 +1,2 @@
-# Battleship-Wiki
+# Battleship
+
