@@ -37,7 +37,8 @@ static class MenuController
 		new string[] {
 			"EASY",
 			"MEDIUM",
-			"HARD"
+			"HARD",
+			"MUTE"
 		}
 
 	};
@@ -61,6 +62,9 @@ static class MenuController
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
 	private const int SETUP_MENU_HARD_BUTTON = 2;
+	private const int SETUP_MENU_MUTE_BUTTON = 3;
+
+
 
 	private const int SETUP_MENU_EXIT_BUTTON = 3;
 	private const int GAME_MENU_RETURN_BUTTON = 0;
@@ -293,6 +297,20 @@ static class MenuController
 			case SETUP_MENU_HARD_BUTTON:
 				GameController.SetDifficulty(AIOption.Hard);
 				break;
+			case SETUP_MENU_MUTE_BUTTON:
+				SwinGame.SetMusicVolume(0);
+				//something didn't like this if statement? TODO implement a mute on/off key. at the moment it is permanent.
+				// if (SwinGame.MusicVolume() == 100) 
+				// {
+				// 	SwinGame.SetMusicVolume(0);
+
+				// } 
+				// else
+				// {
+				// 	SwinGame.SetMusicVolume(100);
+				// }
+				break;
+
 		}
 		//Always end state - handles exit button as well
 		GameController.EndCurrentState();
