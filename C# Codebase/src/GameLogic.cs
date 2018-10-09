@@ -22,6 +22,12 @@ static class GameLogic
 		do {
 			GameController.HandleUserInput();
 			GameController.DrawScreen();
+			if (SwinGame.KeyTyped(KeyCode.vk_m))
+			{
+				//SwinGame.StopMusic();
+				SwinGame.CloseAudio();
+				//GameResources.FreeSounds();
+			}
 		} while (!(SwinGame.WindowCloseRequested() == true | GameController.CurrentState == GameState.Quitting));
 
 		SwinGame.StopMusic();
